@@ -40,7 +40,7 @@
 						</hgroup>
 					</header>
 					
-					<form>
+					<form method="post" id="fContato" action="mailto:contato@cursoemvideo.com">
 						<fieldset id="usuario">
 							<legend>Identificação do Usuário</legend>
 							<p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"/></p>
@@ -57,18 +57,40 @@
 								<legend>Endereço do Usuário</legend>
 								<p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av ..."/></p>
 								<p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="9999999" /></p>
-								Estado:
-								Cidade:
+								<p><label for="cEst">Estado:</label>
+									<select name="tEst" id="cEst"><
+										<optgroup label="Região Sudeste">
+											<option value="SP">São Paulo</option>
+											<option value="RJ">Rio de Janeiro</option>
+											<option value="MG">Minas Gerais</option>
+										</optgroup>
+										<optgroup label="Região Centro-Oeste">
+											<option value="DF" selected>Brasília</option>
+											<option value="GO" >Goiás</option>
+										</optgroup>
+										<optgroup label="Região Sul">	
+											<option value="SC">Santa Catarina</option>
+											<option value="RS">Rio Grande do Sul</option>
+										</optgroup>
+									</select></p>
+									<p><label for="cCid">Cidade:</label> <input type="text" name="tCid" id="cCId" maxlength="40" size="20" placeholder="Digite a cidade" list="cidades"/></p>
+									<datalist id="cidades">
+										<option value="Gama"></option>
+										<option value="Santa Maria"></option>
+										<option value="Valparaiso"></option>
+										<option value="Luziânia"></option>
+									</datalist>
 							</fieldset>
 							<fieldset id="mensagem">
 								<legend>Mensagem do Usuário</legend>
-								Grau de Urgência:
-								Mensagem:
+								<p><label for="cUrg">Grau de Urgência:
+								</label>Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step=".5"/>Máx</p>
+								<p><label for="cMen">Mensagem:</label><textarea name="tMen" id="cMen"cols="45" rows="5" placeholder="Deixe aqui suamensagem."></textarea></p>
 							</fieldset>
 							<fieldset id="pedido">
 								<legend>Quero um Google Glass</legend>
 								Gostaria de adquirir um Google Glass quando disponível
-							Cor:
+								Cor:
 							Quantidade:
 							Preço Total: R$
 							</fieldset>
@@ -84,4 +106,4 @@
 				</footer>
 			</div>
 		</body>
-	</html>	
+	</html>					
