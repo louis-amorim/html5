@@ -6,8 +6,17 @@
 		<meta charset="UTF-8"/>
 		<title>Tudo Sobre Google Glass</title>
 		<link rel="stylesheet" href="_css/estilo.css">
+		<link rel="stylesheet" href="_css/form.css">
+		
 	</head>
 	<script language="javascript" src="_javascript/funcoes.js"></script>
+	<script>
+		function calcTotal(){
+		var qnt = parseInt(document.getElementById('cQunt').value);
+		total=qnt*1500;
+		document.getElementById('cTot').value=total;
+		}
+	</script>
 	<body>
 		<div id="interface">
 			<header id="cabecalho">
@@ -40,7 +49,7 @@
 						</hgroup>
 					</header>
 					
-					<form method="post" id="fContato" action="mailto:contato@cursoemvideo.com">
+					<form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calcTotal();">
 						<fieldset id="usuario">
 							<legend>Identificação do Usuário</legend>
 							<p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"/></p>
@@ -85,25 +94,27 @@
 								<legend>Mensagem do Usuário</legend>
 								<p><label for="cUrg">Grau de Urgência:
 								</label>Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step=".5"/>Máx</p>
-								<p><label for="cMen">Mensagem:</label><textarea name="tMen" id="cMen"cols="45" rows="5" placeholder="Deixe aqui suamensagem."></textarea></p>
+								<p><label for="cMen">Mensagem:</label><textarea name="tMen" id="cMen"cols="35" rows="5" placeholder="Deixe aqui sua mensagem."></textarea></p>
 							</fieldset>
 							<fieldset id="pedido">
 								<legend>Quero um Google Glass</legend>
-								Gostaria de adquirir um Google Glass quando disponível
-								Cor:
-							Quantidade:
-							Preço Total: R$
-							</fieldset>
-							
-							[BOTÃO ENVIAR]
-							
-						</form>
-					</article>
-				</section>
-				<footer id="rodape">
-					<p>Copyright&copy; 2013 - by Gustavo Guanabara <br/>
-					<a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursosemvideo"target="_blank">Twitter</a></p>
-				</footer>
-			</div>
-		</body>
-	</html>					
+								
+								<p><input type="checkbox" name="tPedido" id="cPedido" checked/>
+								<label for="cPedido">Gostaria de adquirir um Google Glass quando disponível</label></p>
+							<p><label for="cCor">Cor:</label><input type="color" name="tCor" id="cCor"cols="45" value="#0000FF"></textarea></p>
+							<p><label for="cQunt">Quantidade:</label> <input type="number" name="tQunt" id="cQunt" min="0" max="5" value="0" /></p>
+							<p><label for="cTot">Preço Total: R$</label> <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly/></p>
+						</fieldset>
+						
+						<input type="image" name="tEnviar"src="_imagens/botao-enviar.png"/>
+						
+					</form>
+				</article>
+			</section>
+			<footer id="rodape">
+				<p>Copyright&copy; 2013 - by Gustavo Guanabara <br/>
+				<a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | <a href="http://twitter.com/cursosemvideo"target="_blank">Twitter</a></p>
+			</footer>
+		</div>
+	</body>
+</html>						
