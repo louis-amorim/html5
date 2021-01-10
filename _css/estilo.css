@@ -38,7 +38,7 @@ header#cabecalho{
 }
 header#cabecalho img#icone{
 	position:absolute;
-	left:780px;
+	right:300px;
 	top:70px;
 }
 header#cabecalho h1{
